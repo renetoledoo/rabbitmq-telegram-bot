@@ -3,13 +3,22 @@ import pika
 import json
 from dotenv import load_dotenv
 
+from telegram.send import send_telegram_message
+
+
 load_dotenv()
 
+
+
 def rabbitmq_callback(ch, method, properties, body):
+    token = os.getenv("TOKEN_TELEGRAM")
+    chat_id = os.getenv("CHAT_ID")
+
     msg = body.decode("utf-8")
     msg_dump = json.loads(msg)
     msg_clean = msg_dump.get("msg", "Não encontrado")
-    print("Mensagem recebida:", msg_clean)
+    
+    send_telegram_message(token, chat_id, msg_clean)
 
 
 class RabbitMQConsumer: 
