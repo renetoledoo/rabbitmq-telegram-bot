@@ -1,1 +1,35 @@
-venv
+# Pastas de ambiente virtual
+venv/
+env/
+.venv/
+
+# Arquivos de configuração do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+*.whl
+*.log
+/__pycache__
+# Configurações do IDE/editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Arquivos de dependências
+pip-wheel-metadata/
+*.egg-info/
+
+# Arquivos de teste
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+
+# Arquivos de ambiente
+.env
+.env.*
